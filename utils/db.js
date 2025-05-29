@@ -1,5 +1,5 @@
+require('dotenv').config()
 const mongoose = require("mongoose")
-
 const URI = process.env.DbPassword
 const conectDb = async () => {
     try {
@@ -9,4 +9,4 @@ const conectDb = async () => {
         console.log("conection Failed ❌", error);
     }
 }
-module.exports=conectDb
+module.exports = conectDb
