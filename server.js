@@ -16,7 +16,7 @@ const corsOptions = {
         "http://localhost:5173",
         "http://192.168.110.14:5173"
         // "https://your-frontend-deploy-url.vercel.app"
-//
+        //
     ],
     methods: "GET,POST,DELETE,PUT,PATCH,HEAD",
     credentials: true

@@ -1,12 +1,22 @@
-require('dotenv').config()
-const mongoose = require("mongoose")
-const URI = process.env.DB_PASSWORD
-const conectDb = async () => {
+require('dotenv').config();  // Load environment variables from .env
+
+const mongoose = require("mongoose");
+
+const URI = process.env.MONGODB_URI;
+
+const connectDb = async () => {
+
+
     try {
-        await mongoose.connect(URI)
+        console.log("MONGODB_URI:", process.env.MONGODB_URI);
+
+        console.log("MONGODB_URI:", process.env.MONGODB_URI ? "Set" : "Not Set");
+
+        await mongoose.connect(URI);
         console.log("DB active");
     } catch (error) {
-        console.log("conection Failed ❌", error);
+        console.log("connection Failed ❌", error);
     }
-}
-module.exports = conectDb
+};
+
+module.exports = connectDb;
