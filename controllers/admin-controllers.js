@@ -1,5 +1,5 @@
 const Service = require("../models/Service-model")
-const Contact = require("../models/Contact-model"); // Ensure this is imported
+const Contact = require("../models/contact-model"); // Ensure this is imported
 const User = require("../models/user-model")
 
 
