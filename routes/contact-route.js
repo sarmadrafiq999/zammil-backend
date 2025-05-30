@@ -7,5 +7,5 @@ const router = express.Router()
 
 
 // contact router
-router.route("/contact-us").post(validate(contactSchema), contactForm)
+router.route("/").post(validate(contactSchema), contactForm);
 module.exports = router;

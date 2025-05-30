@@ -17,7 +17,7 @@ const corsOptions = {
         "http://localhost:5173",
         "https://zammil-frontend.vercel.app",
         "https://mern-frontend-for-zammil-solar-azxu.vercel.app",
-        "https://mern-frontend-for-zammil-sola-git-2fb282-sarmad-rafiqs-projects.vercel.app" 
+        "https://mern-frontend-for-zammil-sola-git-2fb282-sarmad-rafiqs-projects.vercel.app"
 
     ],
     methods: "GET,POST,DELETE,PUT,PATCH,HEAD",
@@ -31,7 +31,8 @@ const PORT = process.env.PORT || 5000;
 
 connectDb().then(() => {
     app.use("/api/auth", authRouter);
-    app.use("/api/contact", contactRouter);  // ✅ Moved out of /auth
+    app.use("/api/contact", contactRouter);
+    // app.use("/api/auth", authRouter);  // ✅ Moved out of /auth
     app.use("/api", serviceRouter);
     app.use("/api/admin", AdminRouter);
     app.use(errorMiddleware);
