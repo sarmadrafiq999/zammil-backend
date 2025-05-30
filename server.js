@@ -12,20 +12,23 @@ const contactRouter = require("./routes/contact-route");
 const app = express();
 
 // CORS options
-const corsOptions = {
-    origin: [
-        "http://localhost:5173",
-        "http://192.168.110.14:5173",
-        "https://zammil-frontend.vercel.app",
-        "https://mern-frontend-for-zammil-solar-azxu.vercel.app" // ✅ your active deployed frontend
+// const corsOptions = {
+//     origin: [
+//         "http://localhost:5173",
+//         "http://192.168.110.14:5173",
+//         "https://zammil-frontend.vercel.app",
+//         "https://mern-frontend-for-zammil-solar-azxu.vercel.app" // ✅ your active deployed frontend
 
-    ],
-    methods: "GET,POST,DELETE,PUT,PATCH,HEAD",
-    credentials: true
-};
+//     ],
+//     methods: "GET,POST,DELETE,PUT,PATCH,HEAD",
+//     credentials: true
+// };
 
-app.use(cors(corsOptions));
-app.use(express.json());
+// app.use(cors(corsOptions));
+app.use(cors({
+    origin: "*",
+    methods: "GET,POST,DELETE,PUT,PATCH,HEAD"
+})); app.use(express.json());
 
 // Use environment PORT or fallback to 5000
 const PORT = process.env.PORT || 5000;
