@@ -1,9 +1,8 @@
-const express = require("express")
-const services = require("../controllers/Service-controller")
+const express = require("express");
+const { getServices } = require("../controllers/Service-controller");
 
-const router = express.Router()
+const router = express.Router();
 
+router.route("/service").get(getServices);
 
-router.route("/service").get(services)
-
-module.exports = router
+module.exports = router;

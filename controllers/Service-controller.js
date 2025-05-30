@@ -1,19 +1,16 @@
-const Service = require("../models/Service-model")
+const Service = require("../models/Service-model");
 
-const services = async (req,res) => {
+const getServices = async (req, res) => {
     try {
         const response = await Service.find();
         if (!response) {
-            res.status(400).json({
-                msg: "Services Data is not found",
-            })
-            return;
+            return res.status(400).json({ msg: "Services Data is not found" });
         }
-        res.status(200).json({
-            response
-        })
+        res.status(200).json({ response });
     } catch (error) {
-        console.log("Error From the services", error);
+        console.error("Error from services:", error);
+        res.status(500).json({ msg: "Server error" });
     }
-}
-module.exports = services
+};
+
+module.exports = { getServices };
