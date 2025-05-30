@@ -16,14 +16,15 @@ const corsOptions = {
     origin: [
         "http://localhost:5173",
         "https://zammil-frontend.vercel.app",
-        "https://mern-frontend-for-zammil-solar-azxu.vercel.app"
+        "https://mern-frontend-for-zammil-solar-azxu.vercel.app",
+        "https://mern-frontend-for-zammil-sola-git-2fb282-sarmad-rafiqs-projects.vercel.app" 
+
     ],
     methods: "GET,POST,DELETE,PUT,PATCH,HEAD",
     credentials: true
 };
 
 app.use(cors(corsOptions));              // ✅ Valid
-app.options('*', cors(corsOptions));     // ✅ Fixed wildcard path
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
