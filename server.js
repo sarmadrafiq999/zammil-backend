@@ -15,10 +15,10 @@ const app = express();
 const corsOptions = {
     origin: [
         "http://localhost:5173",
+        "https://zammil-solar.vercel.app",  // ✅ Add this line
         "https://zammil-frontend.vercel.app",
         "https://mern-frontend-for-zammil-solar-azxu.vercel.app",
         "https://mern-frontend-for-zammil-sola-git-2fb282-sarmad-rafiqs-projects.vercel.app"
-
     ],
     methods: "GET,POST,DELETE,PUT,PATCH,HEAD",
     credentials: true
